@@ -1,3 +1,8 @@
 # bee
 
 Bees.
+
+## Usage
+
+    $ ./bee
+    🐝
