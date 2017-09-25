@@ -41,9 +41,6 @@ trait BeeComponents
   lazy val config = ConfigFactory.defaultApplication
 
   override lazy val router: Router = wire[Routes]
-  override lazy val httpFilters: Seq[EssentialFilter] = {
-    val commonHttpFilters = wire[CommonHttpFilters].filters
-    super.httpFilters ++ commonHttpFilters
-  }
+  override lazy val httpFilters: Seq[EssentialFilter] = wire[CommonHttpFilters].filters
 }
 
