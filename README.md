@@ -1,3 +1,5 @@
-# [bees.direct](http://bees.direct)
+# bees.direct
 
 Bees. Direct to you.
+
+[bees.direct](http://bees.direct)
