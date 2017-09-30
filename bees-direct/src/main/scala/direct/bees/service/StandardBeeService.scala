@@ -1,6 +1,6 @@
 package direct.bees.service
 
-import direct.bees.models.Bee
+import direct.bees.model.Bee
 
 class StandardBeeService extends BeeService {
 

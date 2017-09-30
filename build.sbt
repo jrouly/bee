@@ -16,19 +16,36 @@ lazy val commonSettings = Seq(
 
 lazy val root = (project in file("."))
   .settings(commonSettings)
-  .aggregate(`bees-direct`)
+  .aggregate(
+    `bees-direct`,
+    `bees-direct-play`,
+    `bees-direct-lambda`
+  )
 
 lazy val `bees-direct` = project
-  .enablePlugins(PlayScala)
   .settings(commonSettings)
   .settings(libraryDependencies ++= Seq(
-    Common.enumeratum,
     Common.logback,
     Common.scalaLogging,
-    Common.scalaTest,
+    Common.scalaTest
+  ))
+
+lazy val `bees-direct-play` = project
+  .enablePlugins(PlayScala)
+  .dependsOn(`bees-direct`)
+  .settings(commonSettings)
+  .settings(libraryDependencies ++= Seq(
     Common.macwireMacros,
     Common.macwireUtil,
     Play26.playJson,
     Play26.playServer,
     Play26.playTest
+  ))
+
+
+lazy val `bees-direct-lambda` = project
+  .dependsOn(`bees-direct`)
+  .settings(commonSettings)
+  .settings(libraryDependencies ++= Seq(
+    AWS.lambda
   ))

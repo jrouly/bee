@@ -28,4 +28,10 @@ object Dependencies {
 
   }
 
+  object AWS {
+
+    lazy val lambda = "com.amazonaws" % "aws-lambda-java-core" % "1.1.0"
+
+  }
+
 }
