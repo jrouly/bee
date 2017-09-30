@@ -1,4 +1,4 @@
-package direct.bees.filters
+package direct.bees.play.filters
 
 import akka.stream.Materializer
 import RequestLoggingFilter.LoggableRequestResponse

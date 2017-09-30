@@ -1,6 +1,7 @@
-package direct.bees.config
+package direct.bees.play.config
 
 import com.typesafe.config.Config
+import direct.bees.config.BeeConfig
 
 import scala.util.Try
 

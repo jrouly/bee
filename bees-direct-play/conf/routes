@@ -1,7 +1,7 @@
 
 # Root URL alias to /bee.
-GET        /                             direct.bees.controllers.BeeController.bee
+GET        /                             direct.bees.play.controllers.BeeController.bee
 
-GET        /bee                          direct.bees.controllers.BeeController.bee
-GET        /bee/:n                       direct.bees.controllers.BeeController.nBees(n: Int)
-GET        /bees                         direct.bees.controllers.BeeController.moreBees
+GET        /bee                          direct.bees.play.controllers.BeeController.bee
+GET        /bee/:n                       direct.bees.play.controllers.BeeController.nBees(n: Int)
+GET        /bees                         direct.bees.play.controllers.BeeController.moreBees

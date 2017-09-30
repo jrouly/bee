@@ -1,9 +1,9 @@
-package direct.bees
+package direct.bees.play
 
 import com.softwaremill.macwire.wire
 import com.typesafe.config.ConfigFactory
-import direct.bees.filters.CommonHttpFilters
-import direct.bees.module.BeeControllers
+import direct.bees.play.filters.CommonHttpFilters
+import direct.bees.play.module.BeeControllers
 import play.api.ApplicationLoader.Context
 import play.api._
 import play.api.mvc.EssentialFilter

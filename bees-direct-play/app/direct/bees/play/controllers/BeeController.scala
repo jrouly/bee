@@ -1,7 +1,7 @@
-package direct.bees.controllers
+package direct.bees.play.controllers
 
 import akka.stream.scaladsl.Source
-import direct.bees.controllers.BeeWriteables._
+import direct.bees.play.controllers.BeeWriteables._
 import direct.bees.service.BeeService
 import play.api.mvc.{AbstractController, ControllerComponents}
 
