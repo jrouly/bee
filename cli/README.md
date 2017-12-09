@@ -6,3 +6,7 @@ Bees.
 
     $ ./bee
     🐝
+
+## Building
+
+    $ gcc -o bee bee.c
