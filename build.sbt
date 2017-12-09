@@ -3,7 +3,7 @@ import Dependencies._
 import com.typesafe.sbt.SbtScalariform.ScalariformKeys
 import scalariform.formatter.preferences._
 
-name := """bees.direct"""
+name := "bees.direct"
 
 lazy val scalariformPreferences = FormattingPreferences()
 
@@ -27,6 +27,10 @@ lazy val root = (project in file("."))
     `bees-direct-play`,
     `bees-direct-lambda`
   )
+  .settings(
+    publish in Docker := {},
+    publishArtifact := false
+  )
 
 lazy val `bees-direct` = project
   .settings(commonSettings)
@@ -40,6 +44,7 @@ lazy val `bees-direct` = project
 
 lazy val `bees-direct-play` = project
   .enablePlugins(PlayScala)
+  .enablePlugins(DockerPlugin)
   .dependsOn(`bees-direct`)
   .settings(commonSettings)
   .settings(libraryDependencies ++= Seq(
@@ -47,7 +52,9 @@ lazy val `bees-direct-play` = project
     Play26.playServer,
     Play26.playTest
   ))
-
+  .settings(dockerBaseImage := "openjdk:8-jre")
+  .settings(dockerRepository := Some("jrouly"))
+  .settings(dockerUpdateLatest := true)
 
 lazy val `bees-direct-lambda` = project
   .dependsOn(`bees-direct`)
