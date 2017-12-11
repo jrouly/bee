@@ -1,11 +1,12 @@
 package direct.bees.config
 
 import direct.bees.model.Bee
+import net.rouly.common.config.Configuration
 
-class BeeVarietyConfig(beeConfig: BeeConfig) {
+class BeeVarietyConfig(configuration: Configuration) {
 
   lazy val varietyOfBee: Bee = {
-    val buzz = beeConfig.get("kind.of.bee", Bee.standard.buzz)
+    val buzz = configuration.get("kind.of.bee", Bee.standard.buzz)
     Bee(buzz)
   }
 

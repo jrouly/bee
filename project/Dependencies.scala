@@ -4,6 +4,13 @@ object Dependencies {
 
   val enumeratumVersion = "1.5.12"
   val macwireVersion = "2.3.0"
+  val roulyNetVersion = "0.0.1"
+
+  object Rouly {
+
+    lazy val libCommon = "net.rouly" %% "lib-common" % roulyNetVersion
+
+  }
 
   object Common {
 
@@ -25,6 +32,8 @@ object Dependencies {
     lazy val playJson = "com.typesafe.play" %% "play-json" % playVersion
     lazy val playTest = "com.typesafe.play" %% "play-test" % playVersion % "test"
     lazy val playServer = "com.typesafe.play" %% "play-server" % playVersion
+
+    lazy val libCommonServer = "net.rouly" %% "lib-common-server-play26" % roulyNetVersion
 
   }
 

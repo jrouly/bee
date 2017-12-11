@@ -1,23 +1,11 @@
 import Dependencies._
 
-import com.typesafe.sbt.SbtScalariform.ScalariformKeys
-import scalariform.formatter.preferences._
-
 name := "bees.direct"
-
-lazy val scalariformPreferences = FormattingPreferences()
 
 lazy val commonSettings = Seq(
   organization := "direct.bees",
-  version := "0.0.1",
-  scalaVersion := "2.12.2",
-  ScalariformKeys.preferences := scalariformPreferences,
-  assemblyMergeStrategy in assembly := {
-    case PathList("play/reference-overrides.conf") => MergeStrategy.discard
-    case x =>
-      val oldStrategy = (assemblyMergeStrategy in assembly).value
-      oldStrategy(x)
-  }
+  version := "0.0.2",
+  scalaVersion := "2.12.2"
 )
 
 lazy val root = (project in file("."))
@@ -35,6 +23,7 @@ lazy val root = (project in file("."))
 lazy val `bees-direct` = project
   .settings(commonSettings)
   .settings(libraryDependencies ++= Seq(
+    Rouly.libCommon,
     Common.logback,
     Common.macwireMacros,
     Common.macwireUtil,
@@ -48,6 +37,8 @@ lazy val `bees-direct-play` = project
   .dependsOn(`bees-direct`)
   .settings(commonSettings)
   .settings(libraryDependencies ++= Seq(
+    Rouly.libCommon,
+    Play26.libCommonServer,
     Play26.playJson,
     Play26.playServer,
     Play26.playTest
