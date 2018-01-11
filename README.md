@@ -18,4 +18,4 @@ Bees. Direct to you.
 
 ### Media mentions
 
-![Bees](https://i.imgur.com/SIKxCJ3.gif)
+* [Bees](https://i.imgur.com/SIKxCJ3.gif)
