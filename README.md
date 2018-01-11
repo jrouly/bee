@@ -15,3 +15,7 @@ Bees. Direct to you.
 ### Publishing locally
 
     $ sbt bees-direct-play/docker:publishLocal
+
+### Media mentions
+
+![Bees](https://i.imgur.com/SIKxCJ3.gif)
