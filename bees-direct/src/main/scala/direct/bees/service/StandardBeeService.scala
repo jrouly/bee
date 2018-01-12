@@ -8,6 +8,6 @@ class StandardBeeService extends BeeService {
 
   override def moreBees: Stream[Bee] = Stream.continually(bee)
 
-  override def nBees(n: Int): Stream[Bee] = moreBees.take(n)
+  override def nBees(n: Int): Stream[Bee] = Stream.fill(n)(bee)
 
 }
