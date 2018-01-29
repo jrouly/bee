@@ -1,6 +1,6 @@
 # bee
 
-Bees.
+Conveniently remaps SIGKILL to SIGBEE for more bees.
 
 ## Usage
 
@@ -9,4 +9,4 @@ Bees.
 
 ## Building
 
-    $ gcc -o bee bee.c
+    $ make
