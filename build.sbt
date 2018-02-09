@@ -1,11 +1,14 @@
 import Dependencies._
+import Repositories._
 
 name := "bees.direct"
 
 lazy val commonSettings = Seq(
   organization := "direct.bees",
-  version := "0.0.2",
-  scalaVersion := "2.12.2"
+  scalaVersion := "2.12.2",
+  version := "0.0.2-SNAPSHOT",
+  isSnapshot := true,
+  resolvers += RoulyNet.release
 )
 
 lazy val root = (project in file("."))
