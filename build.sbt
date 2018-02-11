@@ -6,8 +6,8 @@ name := "bees.direct"
 lazy val commonSettings = Seq(
   organization := "direct.bees",
   scalaVersion := "2.12.2",
-  version := "0.0.2-SNAPSHOT",
-  isSnapshot := true,
+  version := "0.0.3",
+  isSnapshot := false,
   resolvers += RoulyNet.release
 )
 
