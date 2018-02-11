@@ -1,10 +1,9 @@
 package direct.bees.play
 
 import com.softwaremill.macwire.wire
-import com.typesafe.config.{Config, ConfigFactory}
-import direct.bees.play.BeeComponents.BeeAppConfig
+import com.typesafe.config.ConfigFactory
 import direct.bees.play.module.{BeeControllers, BeePlayApplication}
-import net.rouly.common.config.decorators._
+import net.rouly.common.server.play.config.AppServerConfig
 import net.rouly.common.server.play.filters.ApplicationHttpFilters
 import net.rouly.common.server.play.module._
 import play.api.ApplicationLoader.Context
@@ -32,16 +31,8 @@ trait BeeComponents
   ).filters
 
   lazy val config = ConfigFactory.defaultApplication
-  lazy val appConfig = wire[BeeAppConfig]
+  lazy val appConfig = wire[AppServerConfig]
 
   override lazy val beeApplication: BeePlayApplication = wire[BeePlayApplication]
 
-}
-
-object BeeComponents {
-  class BeeAppConfig(protected val config: Config)
-    extends PlayConfiguration
-    with EnvironmentConfiguration
-    with PropertiesConfiguration
-    with LoggingConfiguration
 }
