@@ -1,26 +1,30 @@
+import Bintray._
 import Dependencies._
-import Repositories._
 
 name := "bees.direct"
 
+lazy val noPublish = Seq(
+  publishArtifact := false,
+  publish in Docker := {},
+  publishLocal := {},
+  publish := {}
+)
+
 lazy val commonSettings = Seq(
+  licenses += ("MIT", url("http://opensource.org/licenses/MIT")),
   organization := "direct.bees",
   scalaVersion := "2.12.2",
-  version := "0.0.3",
-  isSnapshot := false,
-  resolvers += RoulyNet.release
-)
+  version := "0.0.4",
+  isSnapshot := false
+) ++ bintraySettings
 
 lazy val root = (project in file("."))
   .settings(commonSettings)
+  .settings(noPublish)
   .aggregate(
     `bees-direct`,
     `bees-direct-play`,
     `bees-direct-lambda`
-  )
-  .settings(
-    publish in Docker := {},
-    publishArtifact := false
   )
 
 lazy val `bees-direct` = project
@@ -60,3 +64,5 @@ lazy val `bees-direct-lambda` = project
     assemblyJarName in assembly := "bees-direct-lambda.jar",
     mainClass in assembly := Some("direct.bees.lambda.application.BeeLambdaApplication")
   )
+
+resolvers += Resolver.bintrayRepo("jrouly", "sbt-release")

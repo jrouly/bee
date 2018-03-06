@@ -4,7 +4,7 @@ object Dependencies {
 
   val enumeratumVersion = "1.5.12"
   val macwireVersion = "2.3.0"
-  val roulyNetVersion = "0.0.4"
+  val roulyNetVersion = "0.0.10"
 
   object Rouly {
 
