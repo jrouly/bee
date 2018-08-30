@@ -5,9 +5,6 @@ import net.rouly.common.config.Configuration
 
 class BeeVarietyConfig(configuration: Configuration) {
 
-  lazy val varietyOfBee: Bee = {
-    val buzz = configuration.get("kind.of.bee", Bee.standard.buzz)
-    Bee(buzz)
-  }
+  lazy val variety: Bee = Bee(configuration.get("kind.of.bee", Bee.standard.buzz))
 
 }

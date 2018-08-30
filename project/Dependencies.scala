@@ -4,7 +4,7 @@ object Dependencies {
 
   val enumeratumVersion = "1.5.12"
   val macwireVersion = "2.3.0"
-  val roulyNetVersion = "0.0.10"
+  val roulyNetVersion = "0.0.12"
 
   object Rouly {
 
@@ -14,7 +14,6 @@ object Dependencies {
 
   object Common {
 
-    lazy val enumeratum = "com.beachape" %% "enumeratum" % enumeratumVersion
     lazy val logback = "ch.qos.logback" % "logback-classic" % "1.2.3"
     lazy val macwireMacros = "com.softwaremill.macwire" %% "macros" % macwireVersion
     lazy val macwireUtil = "com.softwaremill.macwire" %% "util" % macwireVersion
@@ -26,8 +25,6 @@ object Dependencies {
   object Play26 {
 
     val playVersion = "2.6.5"
-
-    lazy val enumeratumPlayJson = "com.beachape" %% "enumeratum-play-json" % enumeratumVersion
 
     lazy val playJson = "com.typesafe.play" %% "play-json" % playVersion
     lazy val playTest = "com.typesafe.play" %% "play-test" % playVersion % "test"

@@ -1,17 +1,23 @@
 package direct.bees.lambda.module
 
+import akka.actor.ActorSystem
+import akka.stream.{ActorMaterializer, Materializer}
 import com.softwaremill.macwire.{Module, wire}
-import direct.bees.lambda.{BeeLambda, LoggingBeeLambda, StandardBeeLambda}
-import direct.bees.module.{BeeConfigModule, BeeServiceModule}
+import direct.bees.lambda.{BeeLambda, StandardBeeLambda}
+import direct.bees.module.BeeServiceModule
 import net.rouly.common.config.Configuration
+
+import scala.concurrent.ExecutionContext
 
 @Module
 class BeeLambdaModule {
 
-  lazy val configuration: Configuration = Configuration.default
-  lazy val beeConfigModule: BeeConfigModule = wire[BeeConfigModule]
-  lazy val beeServiceModule: BeeServiceModule = wire[BeeServiceModule]
+  implicit val actorSystem: ActorSystem = ActorSystem()
+  implicit val executionContext: ExecutionContext = actorSystem.dispatcher
+  implicit val materializer: Materializer = ActorMaterializer()
 
-  lazy val lambda: BeeLambda = new LoggingBeeLambda(wire[StandardBeeLambda])
+  lazy val configuration: Configuration = Configuration.default
+  lazy val beeServiceModule: BeeServiceModule = wire[BeeServiceModule]
+  lazy val lambda: BeeLambda = wire[StandardBeeLambda]
 
 }

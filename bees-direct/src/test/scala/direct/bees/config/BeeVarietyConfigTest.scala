@@ -19,12 +19,12 @@ class BeeVarietyConfigTest
 
   describe("varietyOfBee") {
     it("should default correctly") {
-      beeVarietyConfig.varietyOfBee shouldEqual Bee.standard
+      beeVarietyConfig.variety shouldEqual Bee.standard
     }
 
     it("should correctly configure") {
       beeVarietyConfig = new BeeVarietyConfig(MemoryConfiguration(Map("kind.of.bee" -> "duck")))
-      beeVarietyConfig.varietyOfBee shouldEqual Bee("duck")
+      beeVarietyConfig.variety shouldEqual Bee("duck")
     }
   }
 

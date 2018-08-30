@@ -14,8 +14,8 @@ lazy val commonSettings = Seq(
   licenses += ("MIT", url("http://opensource.org/licenses/MIT")),
   organization := "direct.bees",
   scalaVersion := "2.12.2",
-  version := "0.0.4",
-  isSnapshot := false
+  version := "0.0.5",
+  isSnapshot := true
 ) ++ bintraySettings
 
 lazy val root = (project in file("."))
@@ -57,9 +57,7 @@ lazy val `bees-direct-play` = project
 lazy val `bees-direct-lambda` = project
   .dependsOn(`bees-direct`)
   .settings(commonSettings)
-  .settings(libraryDependencies ++= Seq(
-    AWS.lambda
-  ))
+  .settings(libraryDependencies += AWS.lambda)
   .settings(
     assemblyJarName in assembly := "bees-direct-lambda.jar",
     mainClass in assembly := Some("direct.bees.lambda.application.BeeLambdaApplication")
