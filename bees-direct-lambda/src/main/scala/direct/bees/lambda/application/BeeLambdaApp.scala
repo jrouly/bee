@@ -8,9 +8,9 @@ import direct.bees.lambda.module.BeeLambdaModule
 
 object BeeLambdaApp extends RequestStreamHandler {
 
-  lazy val beeLambdaModule = wire[BeeLambdaModule]
+  private lazy val lambda = wire[BeeLambdaModule].lambda
 
-  override def handleRequest(input: InputStream, output: OutputStream, context: Context) =
-    beeLambdaModule.lambda.handleRequest(input, output, context)
+  override def handleRequest(input: InputStream, output: OutputStream, context: Context): Unit =
+    lambda.streamBees(output)
 
 }

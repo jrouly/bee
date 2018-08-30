@@ -3,5 +3,4 @@
 GET        /                             direct.bees.play.controllers.BeeController.bee
 
 GET        /bee                          direct.bees.play.controllers.BeeController.bee
-GET        /bees/:n                      direct.bees.play.controllers.BeeController.nBees(n: Int)
-GET        /bees                         direct.bees.play.controllers.BeeController.moreBees
+GET        /bees                         direct.bees.play.controllers.BeeController.bees
