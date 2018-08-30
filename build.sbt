@@ -15,7 +15,7 @@ lazy val commonSettings = Seq(
   organization := "direct.bees",
   scalaVersion := "2.12.2",
   version := "0.0.5",
-  isSnapshot := true
+  isSnapshot := false
 ) ++ bintraySettings
 
 lazy val root = (project in file("."))
