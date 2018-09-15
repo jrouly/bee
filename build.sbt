@@ -60,7 +60,7 @@ lazy val `bees-direct-lambda` = project
   .settings(libraryDependencies += AWS.lambda)
   .settings(
     assemblyJarName in assembly := "bees-direct-lambda.jar",
-    mainClass in assembly := Some("direct.bees.lambda.application.BeeLambdaApp")
+    mainClass in assembly := Some("direct.bees.lambda.application.BeeLambdaApplication")
   )
 
 resolvers += Resolver.bintrayRepo("jrouly", "sbt-release")

@@ -13,8 +13,9 @@ package:
 
 functions:
   bee:
-    handler: direct.bees.lambda.application.BeeLambdaApp
+    handler: direct.bees.lambda.application.BeeLambdaApplication
     events:
       - http:
           path: bee
           method: get
+          integration: lambda
