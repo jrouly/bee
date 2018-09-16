@@ -1,8 +1,7 @@
-# bees.direct
+# bees.direct [![Download](https://api.bintray.com/packages/jrouly/sbt-release/bees-direct-play/images/download.svg)](https://bintray.com/jrouly/sbt-release/bees-direct-play/_latestVersion)
 
 Bees. Direct to you.
 
-[bees.direct](http://bees.direct)
 
 ## Play application
 
