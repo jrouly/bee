@@ -9,7 +9,7 @@ provider:
   memorySize: 512
 
 package:
-  artifact: bees-direct-lambda/target/scala-2.12/bees-direct-lambda.jar
+  artifact: lambda/target/scala-2.12/bees-direct-lambda.jar
 
 functions:
   bee:

@@ -15,19 +15,20 @@ lazy val commonSettings = Seq(
   organization := "direct.bees",
   scalaVersion := "2.12.2",
   version := "0.0.5",
-  isSnapshot := false
+  isSnapshot := false,
+  name := s"bees-direct-${name.value}"
 ) ++ bintraySettings
 
 lazy val root = (project in file("."))
   .settings(commonSettings)
   .settings(noPublish)
   .aggregate(
-    `bees-direct`,
-    `bees-direct-play`,
-    `bees-direct-lambda`
+    core,
+    play,
+    lambda
   )
 
-lazy val `bees-direct` = project
+lazy val core = project
   .settings(commonSettings)
   .settings(libraryDependencies ++= Seq(
     Rouly.libCommon,
@@ -38,10 +39,10 @@ lazy val `bees-direct` = project
     Common.scalaTest
   ))
 
-lazy val `bees-direct-play` = project
+lazy val play = project
   .enablePlugins(PlayScala)
   .enablePlugins(DockerPlugin)
-  .dependsOn(`bees-direct`)
+  .dependsOn(core)
   .settings(commonSettings)
   .settings(libraryDependencies ++= Seq(
     Rouly.libCommon,
@@ -54,8 +55,8 @@ lazy val `bees-direct-play` = project
   .settings(dockerRepository := Some("jrouly"))
   .settings(dockerUpdateLatest := true)
 
-lazy val `bees-direct-lambda` = project
-  .dependsOn(`bees-direct`)
+lazy val lambda = project
+  .dependsOn(core)
   .settings(commonSettings)
   .settings(libraryDependencies += AWS.lambda)
   .settings(

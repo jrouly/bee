@@ -4,19 +4,30 @@ Bees. Direct to you.
 
 [bees.direct](http://bees.direct)
 
-## Building jars
+## Play application
 
-    $ sbt dist
+### Build
 
-## Docker
+    $ sbt play/dist
+    $ sbt play/publishLocal
+
+### Run
+
+    $ sbt play/run
+
+### Docker run
 
     $ docker run -it jrouly/bees-direct-play:latest
 
-Available at [hub.docker.com](https://hub.docker.com/r/jrouly/bees-direct-play/).
+Also available on [hub.docker.com](https://hub.docker.com/r/jrouly/bees-direct-play/).
 
-### Publishing locally
 
-    $ sbt bees-direct-play/docker:publishLocal
+## Lambda function
+
+### Build
+
+    $ sbt lambda/assembly
+    $ serverless deploy
 
 ## Media mentions
 
