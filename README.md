@@ -27,6 +27,9 @@ Also available on [hub.docker.com](https://hub.docker.com/r/jrouly/bees-direct-p
 ### Build
 
     $ sbt lambda/assembly
+
+### Deploy
+
     $ serverless deploy
 
 ## Media mentions
