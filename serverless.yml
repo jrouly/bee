@@ -1,0 +1,24 @@
+service: bees
+
+app: bees
+tenant: jrouly
+
+frameworkVersion: ">=1.2.0 <2.0.0"
+
+provider:
+  name: aws
+  runtime: java8
+  stage: dev
+  memorySize: 512
+
+package:
+  artifact: lambda/target/scala-2.12/bees-direct-lambda.jar
+
+functions:
+  bee:
+    handler: direct.bees.lambda.application.BeeLambdaApplication
+    events:
+      - http:
+          path: bee
+          method: get
+          integration: lambda
