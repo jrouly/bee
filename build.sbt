@@ -14,7 +14,7 @@ lazy val commonSettings = Seq(
   licenses += ("MIT", url("http://opensource.org/licenses/MIT")),
   organization := "direct.bees",
   scalaVersion := "2.12.2",
-  version := "0.0.5",
+  version := "0.0.6",
   isSnapshot := false,
   name := s"bees-direct-${name.value}"
 ) ++ bintraySettings
