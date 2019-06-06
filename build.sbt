@@ -16,7 +16,8 @@ lazy val commonSettings = Seq(
   scalaVersion := "2.12.2",
   version := "0.0.6",
   isSnapshot := false,
-  name := s"bees-direct-${name.value}"
+  name := s"bees-direct-${name.value}",
+  resolvers += Resolver.bintrayRepo("jrouly", "sbt-release")
 ) ++ bintraySettings
 
 lazy val root = (project in file("."))
@@ -63,5 +64,3 @@ lazy val lambda = project
     assemblyJarName in assembly := "bees-direct-lambda.jar",
     mainClass in assembly := Some("direct.bees.lambda.application.BeeLambdaApplication")
   )
-
-resolvers += Resolver.bintrayRepo("jrouly", "sbt-release")

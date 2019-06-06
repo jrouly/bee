@@ -7,8 +7,7 @@ Bees. Direct to you.
 
 ### Build
 
-    $ sbt play/dist
-    $ sbt play/publishLocal
+    $ sbt play/docker:publishLocal
 
 ### Run
 
