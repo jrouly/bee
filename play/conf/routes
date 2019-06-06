@@ -1,6 +1,4 @@
-
-# Root URL alias to /bee.
 GET        /                             direct.bees.play.controllers.BeeController.bee
 
-GET        /bee                          direct.bees.play.controllers.BeeController.bee
+GET        /more                         direct.bees.play.controllers.BeeController.bees
 GET        /bees                         direct.bees.play.controllers.BeeController.bees
